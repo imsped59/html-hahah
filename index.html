@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultimate Rickroll x5</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: #1e1e1e;
+      color: #fff;
+    }
+    button {
+      font-size: 24px;
+      padding: 20px 40px;
+      background: #ff4da6;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #ff1a8c;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>Click ONLY if you dare...</h1>
+  <button onclick="multiRickroll()">🚀 SUPER RICKROLL x5 🚀</button>
+
+  <script>
+    function multiRickroll() {
+      const url = 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&loop=1&playlist=dQw4w9WgXcQ';
+
+      for (let i = 0; i < 5; i++) {
+        const newTab = window.open('about:blank', `_blank`);
+        if (newTab) {
+          newTab.document.write(`
+            <!DOCTYPE html>
+            <html>
+              <head><title>Never Gonna Give You Up</title></head>
+              <style>body,html{margin:0;padding:0;height:100%;overflow:hidden;background:#000;}</style>
+              <body>
+                <iframe src="${url}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>
+              </body>
+            </html>
+          `);
+          newTab.document.close();
+        }
+      }
+
+      document.querySelector('button').innerHTML = 'Never gonna give you up! 🎤';
+    }
+  </script>
+</body>
+</html>
